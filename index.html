@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梧州智慧公交</title>
+    <link rel="stylesheet" href="/jbbus2/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">梧州智慧公交</div>
+    </div>
+
+    <div class="content">
+        <div class="message-header">
+            <h1>交通消息</h1>
+            <div id="real-time-clock">--14:35:35--</div>
+        </div>
+        <div class="message-list">
+            <div class="message-item">
+                <div class="route-number">7路</div>
+                <div class="route-info">开往中山路</div>
+                <div class="next-trip">下一班 14:35</div>
+            </div>
+            <!-- 可以复制上面的 .message-item 来添加更多公交信息 -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="javascript:void(0);" class="footer-item active" onclick="showContent('home')">首页</a>
+        <a href="https://mobile.busonline.cc/BusOnline/WeChat/common/wuzhou/index.html" class="footer-item" target="_blank">公交查询</a>
+        <a href="javascript:void(0);" class="footer-item" onclick="showContent('company-business')">公司业务</a>
+        <a href="javascript:void(0);" class="footer-item" onclick="showContent('profile')">我</a>
+    </div>
+
+    <div class="footer-content">
+        <div class="footer-item" id="home">
+            <h3>首页</h3>
+            <p>欢迎来到梧州公交首页。</p>
+        </div>
+        <div class="footer-item" id="company-business" style="display: none;">
+            <h3>公司业务</h3>
+            <ul>
+                <li><a href="#">包车定制</a></li>
+                <li><a href="#">校园定制</a></li>
+                <li><a href="#">企业定制</a></li>
+                <li><a href="#">其他定制</a></li>
+            </ul>
+            <button onclick="showContent('home')" class="back-to-home">返回首页</button>
+        </div>
+        <div class="footer-item" id="profile" style="display: none;">
+            <h3>我</h3>
+            <div class="theme-selector">
+                <h4>选择主题颜色</h4>
+                <button class="theme-button" onclick="changeTheme('yellow')">珍宝黄</button>
+                <button class="theme-button" onclick="changeTheme('blue')">城投蓝</button>
+                <button class="theme-button" onclick="changeTheme('red')">中国红</button>
+                <button class="theme-button" onclick="changeTheme('black')">宇宙黑</button>
+                <button class="theme-button" onclick="changeTheme('green')">金晖绿</button>
+            </div>
+            <a href="https://sk.lishewen.com/tdplan" target="_blank" class="back-to-home">备用公交查询</a>
+            <button onclick="showContent('home')" class="back-to-home">返回首页</button>
+        </div>
+    </div>
+
+    <script>
+        function showContent(id) {
+            const items = document.querySelectorAll('.footer-item');
+            items.forEach(item => item.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function changeTheme(color) {
+            const body = document.body;
+            switch (color) {
+                case 'yellow':
+                    body.style.background = '#f7e816';
+                    break;
+                case 'blue':
+                    body.style.background = '#2f80ed';
+                    break;
+                case 'red':
+                    body.style.background = '#d32f2f';
+                    break;
+                case 'black':
+                    body.style.background = '#000000';
+                    break;
+                case 'green':
+                    body.style.background = '#388e3c';
+                    break;
+                default:
+                    body.style.background = '#2f80ed';
+            }
+        }
+
+        function showRealTimeClock() {
+            const clock = document.getElementById('real-time-clock');
+            const now = new Date();
+            clock.innerHTML = '--' + now.toLocaleTimeString().slice(0, 8) + '--';
+        }
+
+        setInterval(showRealTimeClock, 1000);
+        showRealTimeClock();
+    </script>
+</body>
+</html>
