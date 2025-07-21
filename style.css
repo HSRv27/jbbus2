@@ -1,0 +1,188 @@
+/* 全局设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Han Sans SC', sans-serif;
+    background-color: #fdd835;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 60px; /* 确保底部导航栏始终可见 */
+    font-size: 18px; /* 增加字体大小 */
+}
+
+.header {
+    background-color: #ffeb3b;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.header-title {
+    font-size: 2rem; /* 增加标题字体大小 */
+    color: #333;
+}
+
+.content {
+    margin: 2rem;
+    width: 80%;
+    max-width: 800px;
+}
+
+.message-header {
+    background-color: #03a9f4;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+.message-header h1 {
+    font-size: 3rem; /* 增加标题字体大小 */
+    margin-bottom: 0.5rem;
+}
+
+#real-time-clock {
+    font-size: 1.5rem; /* 增加时间字体大小 */
+}
+
+.message-list {
+    margin-top: 1rem;
+}
+
+.message-item {
+    background-color: #ffecb3;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.route-number {
+    font-size: 1.5rem; /* 增加字体大小 */
+    font-weight: bold;
+}
+
+.route-info {
+    font-size: 1.2rem; /* 增加字体大小 */
+    margin-top: 0.5rem;
+}
+
+.next-trip {
+    font-size: 1rem; /* 增加字体大小 */
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffeb3b;
+    padding: 10px;
+    width: 100%;
+    z-index: 1000; /* 确保底部导航栏在内容之上 */
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-item {
+    font-size: 1.2rem; /* 增加字体大小 */
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-item.active {
+    font-weight: bold;
+}
+
+.footer-content {
+    margin-bottom: 60px; /* 与底部导航栏高度一致 */
+    width: 80%;
+    max-width: 800px;
+}
+
+.footer-item {
+    display: none;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.footer-item h3 {
+    font-size: 1.8rem; /* 增加字体大小 */
+    margin-bottom: 1rem;
+}
+
+.footer-item p {
+    font-size: 1.2rem; /* 增加字体大小 */
+    margin-bottom: 1rem;
+}
+
+.footer-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-item ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.theme-selector {
+    margin-bottom: 1rem;
+}
+
+.theme-button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-button:hover {
+    background-color: #555;
+}
+
+.theme-button:nth-child(1) {
+    background: #f7e816;
+    color: #333;
+}
+
+.theme-button:nth-child(2) {
+    background: #2f80ed;
+    color: #fff;
+}
+
+.theme-button:nth-child(3) {
+    background: #d32f2f;
+    color: #fff;
+}
+
+.theme-button:nth-child(4) {
+    background: #000000;
+    color: #fff;
+}
+
+.theme-button:nth-child(5) {
+    background: #388e3c;
+    color: #fff;
+}
+
+.back-to-home {
+    background-color: #4CAF50;
+    color: white
